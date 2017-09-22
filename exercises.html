@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <script src="app.js"></script>
+    <body>
+      <section class="container" id="appArea">
+
+      </section>
+    </body>
+    <script>
+       window.onload = () => {
+        document.getElementById('appArea').innerHTML = '';
+        let keys = Object.keys(exercises);
+        console.log(keys);
+            keys.map((exerciseID) => {
+            // Block of 1 exercise
+                let block = document.createElement('div');
+                block.className = "exercise-block";
+            // Exercise Image
+                let exerciseImage = document.createElement('img');
+                exerciseImage.className = 'exercise-image';
+                exerciseImage.src = exercises[exerciseID].url;
+                block.appendChild(exerciseImage);
+            // Exercise Title
+                let exerciseName = document.createElement('p');
+                exerciseName.className = 'exercise-title';
+                exName = document.createTextNode(exercises[exerciseID].name);
+                exerciseName.appendChild(exName);
+                block.appendChild(exerciseName)
+            // Exercise Describtion
+                let exerciseDescription = document.createElement('p');
+                exerciseDescription.className = 'exercise-desc';
+                exDesc = document.createTextNode(exercises[exerciseID].description);
+                exerciseDescription.appendChild(exDesc);
+                block.appendChild(exerciseDescription)   
+            // Add all to app area
+                document.getElementById('appArea').appendChild(block);
+            })
+        
+    }
+    </script>
+</html>
