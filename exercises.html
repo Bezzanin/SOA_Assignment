@@ -5,18 +5,41 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="style.css" rel="stylesheet">
+        
+<script src="https://www.gstatic.com/firebasejs/4.4.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyBnLBI6wcLpBhjrjCqdXc7ZgNOAe4wZhcA",
+    authDomain: "lapintest1.firebaseapp.com",
+    databaseURL: "https://lapintest1.firebaseio.com",
+    projectId: "lapintest1",
+    storageBucket: "lapintest1.appspot.com",
+    messagingSenderId: "744056805967"
+  };
+  firebase.initializeApp(config);
+
+
+
+</script>
     </head>
-    <script src="app.json"></script>
     <body>
       <section class="container" id="appArea">
-
+     
       </section>
     </body>
     <script>
-       window.onload = () => {
+  var ref = firebase.database().ref().child('exercises');
+  var exercises;
+  ref.once('value', (snap) => {
+      exercises = snap.val();
+  }).then(() => {renderExercises()})
+
+//   setTimeout(() => {renderExercises()}, 1000)
+  let renderExercises = () => {
         document.getElementById('appArea').innerHTML = '';
         let keys = Object.keys(exercises);
-        console.log(keys);
+        console.log(exercises);
             keys.map((exerciseID) => {
             // Block of 1 exercise
                 let block = document.createElement('div');
@@ -32,7 +55,7 @@
                 exName = document.createTextNode(exercises[exerciseID].name);
                 exerciseName.appendChild(exName);
                 block.appendChild(exerciseName)
-            // Exercise Describtion
+            // Exercise Description
                 let exerciseDescription = document.createElement('p');
                 exerciseDescription.className = 'exercise-desc';
                 exDesc = document.createTextNode(exercises[exerciseID].description);
