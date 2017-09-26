@@ -31,11 +31,10 @@
     <script>
   var ref = firebase.database().ref().child('exercises');
   var exercises;
-  ref.once('value', (snap) => {
+  ref.on('value', (snap) => {
       exercises = snap.val();
-  }).then(() => {renderExercises()})
-
-//   setTimeout(() => {renderExercises()}, 1000)
+  });
+ setTimeout(() => {renderExercises()}, 1000)
   let renderExercises = () => {
         document.getElementById('appArea').innerHTML = '';
         let keys = Object.keys(exercises);
