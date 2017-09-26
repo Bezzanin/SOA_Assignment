@@ -1,0 +1,17 @@
+var machines = {
+    "mID1" : {
+        "name" : "Bench",
+        "description" : "Lorem ipsum dolor sit amet, quas veniam bonorum ius ad, mutat nonumes disputando ne eam, vivendo fabellas accusamus qui eu.",
+        "url" : "http://peakfatlossandfitness.com/uploads/3/4/5/0/34504677/5109248_orig.jpg"
+      },
+      "mID2" : {
+        "name" : "Leg Machine",
+        "description" : "Lorem ipsum dolor sit amet, quas veniam bonorum ius ad, mutat nonumes disputando ne eam, vivendo fabellas accusamus qui eu.",
+        "url" : "http://build-muscle-101.com/wp-content/uploads/2014/12/barbell-curl.jpg"
+      },
+      "mID3" : {
+        "name" : "Scott machine",
+        "description" : "Lorem ipsum dolor sit amet, quas veniam bonorum ius ad, mutat nonumes disputando ne eam, vivendo fabellas accusamus qui eu.",
+        "url" : "http://bodybuilding-wizard.com/wp-content/uploads/2014/07/machine-preacher-curls-5-6-7-1.jpg"
+      }
+};

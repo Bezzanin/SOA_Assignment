@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="style.css" rel="stylesheet">
+    </head>
+    <script src="machines.json"></script>
+    <body>
+      <section class="container" id="appArea">
+
+      </section>
+    </body>
+    <script>
+    window.onload = () => {
+        
+        var machineKeys = Object.keys(machines);
+        console.log(machineKeys);
+        machineKeys.map((machine) => {
+        var container = document.createElement('div');
+        var machineImage = document.createElement('img');
+        var machineName = document.createElement('h1');
+        var machineNameData =  document.createTextNode(machines[machine].name);
+        machineName.appendChild(machineNameData);
+
+        var machineDesc = document.createElement('p');
+        var mDescription = document.createTextNode(machines[machine].description);
+        machineDesc.appendChild(mDescription);
+
+
+        document.getElementById('appArea').appendChild(machineName);
+        document.getElementById('appArea').appendChild(machineDesc)
+    })
+    };
+    
+    
+    </script>
+</html>

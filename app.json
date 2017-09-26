@@ -1,4 +1,5 @@
-let exercises = {
+{
+"exercises" : {
     
         "id1" : {
           "muscles" : "chest",
@@ -67,4 +68,4 @@ let exercises = {
           "description" : "Lorem ipsum dolor sit amet, quas veniam bonorum ius ad, mutat nonumes disputando ne eam, vivendo fabellas accusamus qui eu.",
           "url" : "https://3i133rqau023qjc1k3txdvr1-wpengine.netdna-ssl.com/wp-content/uploads/2014/07/Basic-Crunch_Exercise.jpg"
         }
-      }
+      }}
